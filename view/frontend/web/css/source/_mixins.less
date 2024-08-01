@@ -1,0 +1,41 @@
+// mixins
+
+.icon__bg-color__transform (
+  @background-color: transparent,
+  @transform: rotate(0deg)
+) {
+  background-color: @background-color;
+  transform: @transform;
+}
+
+//TODO: deze misin implementeren in _modal_popup.less
+// scrollbar custom styling
+.scrollbar-mixin (
+  @scrollbar-width: 10px,
+  @scrollbar-track-border-color: @portal-gray-400,
+  @scrollbar-handele-color: @portal-gray-400,
+  @scrollbar-handele-actrive-color: @portal-action-color
+) {
+  //scrollbar styling
+  //width
+  ::-webkit-scrollbar {
+    width: @scrollbar-width;
+  }
+
+  //Track
+  ::-webkit-scrollbar-track {
+    border: 1px solid @scrollbar-track-border-color;
+    border-radius: 10px;
+  }
+
+  //Handle
+  ::-webkit-scrollbar-thumb {
+    background: @scrollbar-handele-color;
+    border-radius: 10px;
+  }
+
+  //Handle on hover
+  ::-webkit-scrollbar-thumb:hover {
+    background: @scrollbar-handele-actrive-color;
+  }
+}

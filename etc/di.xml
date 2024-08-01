@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Aiden\PortalBase\Model\Logger\Handler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+            <argument name="fileName" xsi:type="string">/var/log/Aiden_Portal.log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Aiden\PortalBase\Model\Logger\Logger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">Aiden\PortalBase\Model\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Aiden\PortalBase\Model\Logging">
+        <arguments>
+            <argument name="logger" xsi:type="object">Aiden\PortalBase\Model\Logger\Logger</argument>
+        </arguments>
+    </type>
+    <preference for="Aiden\PortalBase\Model\CartInterface" type="Aiden\PortalBase\Model\Cart"/>
+    <preference for="Aiden\PortalBase\Model\ConfigInterface" type="Aiden\PortalBase\Model\Config"/>
+    <preference for="Aiden\PortalBase\Model\CustomerRepositoryInterface" type="Aiden\PortalBase\Model\CustomerRepository"/>
+    <preference for="Aiden\PortalBase\Model\DataRepositoryInterface" type="Aiden\PortalBase\Model\DataRepository"/>
+    <preference for="Aiden\PortalBase\Model\LoggingInterface" type="Aiden\PortalBase\Model\Logging"/>
+    <preference for="Aiden\PortalBase\Model\ProductRepositoryInterface" type="Aiden\PortalBase\Model\ProductRepository"/>
+    <preference for="Aiden\PortalBase\Model\SessionInterface" type="Aiden\PortalBase\Model\Session"/>
+    <preference for="Aiden\PortalBase\Model\StoreInterface" type="Aiden\PortalBase\Model\Store"/>
+    <preference for="Aiden\PortalBase\Model\PageInterface" type="Aiden\PortalBase\Model\Page"/>
+    <preference for="Aiden\PortalBase\Model\AuthorizationInterface" type="Aiden\PortalBase\Model\Authorization"/>
+    <preference for="Aiden\PortalBase\Model\CountryRepositoryInterface" type="Aiden\PortalBase\Model\CountryRepository"/>
+    <preference for="Aiden\PortalBase\Model\AddressRepositoryInterface" type="Aiden\PortalBase\Model\AddressRepository"/>
+    <preference for="Aiden\PortalBase\Api\Data\ApiDataRequestInterface" type="Aiden\PortalBase\Model\Api\Data\ApiDataRequest"/>
+    <preference for="Aiden\PortalBase\Api\Data\ActionInterface" type="Aiden\PortalBase\Model\Api\Data\Action"/>
+    <preference for="Aiden\PortalBase\Api\Data\FileDownloadInterface" type="Aiden\PortalBase\Model\Api\Data\FileDownload"/>
+    <preference for="Aiden\PortalBase\Api\Data\ProfilesInterface" type="Aiden\PortalBase\Model\Api\Data\Profiles"/>
+    <preference for="Aiden\PortalBase\Api\Data\AuthProfileInterface" type="Aiden\PortalBase\Model\Api\Data\AuthProfile"/>
+    <preference for="Aiden\PortalBase\Api\Data\DataFilterInterface" type="Aiden\PortalBase\Model\Api\Data\DataFilter"/>
+    <preference for="Aiden\PortalBase\Api\Data\DataOrderInterface" type="Aiden\PortalBase\Model\Api\Data\DataOrder"/>
+    <preference for="Aiden\PortalBase\Api\Data\TierPriceInterface" type="Aiden\PortalBase\Model\Api\Data\TierPrice"/>
+    <preference for="Aiden\PortalBase\Api\Data\CurrencyInterface" type="Aiden\PortalBase\Model\Api\Data\Currency"/>
+    <preference for="Aiden\PortalBase\Model\Data\GenericResponseInterface" type="Aiden\PortalBase\Model\Data\GenericResponse"/>
+    <preference for="Aiden\PortalBase\Model\Data\DataResponseInterface" type="Aiden\PortalBase\Model\Data\DataResponse"/>
+    <preference for="Aiden\PortalBase\Model\Data\ApiObjectResponseInterface" type="Aiden\PortalBase\Model\Data\ApiObjectResponse"/>
+    <preference for="Aiden\PortalBase\Model\Data\QuoteHeaderInterface" type="Aiden\PortalBase\Model\Data\QuoteHeader"/>
+    <preference for="Aiden\PortalBase\Model\Data\BaseProductDataInterface" type="Aiden\PortalBase\Model\Data\BaseProductData"/>
+    <preference for="Aiden\PortalBase\Api\Data\QuoteItemInterface" type="Aiden\PortalBase\Model\Api\Data\QuoteItem"/>
+    <preference for="Aiden\PortalBase\Model\Data\MagentoOptionsInterface" type="Aiden\PortalBase\Model\Data\MagentoOptions"/>
+    <preference for="Aiden\PortalBase\ViewModel\Data\PageConfigInterface" type="Aiden\PortalBase\ViewModel\Data\PageConfig"/>
+    <preference for="Aiden\PortalBase\ViewModel\Data\RowOptionInterface" type="Aiden\PortalBase\ViewModel\Data\RowOption"/>
+    <preference for="Aiden\PortalBase\ViewModel\Data\MultiplePageConfigInterface" type="Aiden\PortalBase\ViewModel\Data\MultiplePageConfig"/>
+    <preference for="Magento\Framework\View\Element\Html\Link\Current" type="Aiden\PortalBase\ViewElement\Html\Link\Current"/>
+    <preference for="Magento\Framework\Convert\Excel" type="Aiden\PortalBase\Convert\ExcelXml"/>
+    <preference for="Aiden\PortalBase\Api\Export\FileExportInterface" type="Aiden\PortalBase\Model\Api\Export\FileExport"/>
+    <preference for="Aiden\PortalBase\Api\Data\FileExportRequestInterface" type="Aiden\PortalBase\Model\Api\Data\FileExportRequest"/>
+</config>

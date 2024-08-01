@@ -1,0 +1,102 @@
+/*
+ *   keyframes
+ */
+@-webkit-keyframes backInDown {
+    0% {
+        opacity: .7;
+        -webkit-transform: translateY(-1200px) scale(.7);
+        transform: translateY(-1200px) scale(.7)
+    }
+    80% {
+        opacity: .7;
+        -webkit-transform: translateY(0) scale(.7);
+        transform: translateY(0) scale(.7)
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+@keyframes backInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-1200px) scale(.7);
+        transform: translateY(-1200px) scale(.7)
+    }
+    80% {
+        opacity: .7;
+        -webkit-transform: translateY(0) scale(.7);
+        transform: translateY(0) scale(.7)
+    }
+    to {
+
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+@-webkit-keyframes backOutUp {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    20% {
+        opacity: .7;
+        -webkit-transform: translateY(0) scale(.7);
+        transform: translateY(0) scale(.7)
+    }
+    to {
+        height: 0;
+        padding: 0;
+        margin: 0;
+        opacity: .7;
+        -webkit-transform: translateY(-700px) scale(.7);
+        transform: translateY(-700px) scale(.7)
+    }
+}
+@keyframes backOutUp {
+    0% {
+        max-height: 120px;
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    20% {
+        opacity: .7;
+        -webkit-transform: translateY(0) scale(.7);
+        transform: translateY(0) scale(.7)
+    }
+    to {
+        max-height: 0;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        -webkit-transform: translateY(-700px) scale(.7);
+        transform: translateY(-700px) scale(.7)
+    }
+}
+
+/*
+ * utility classes
+ */
+.animate__animated(@duration: 1s) {
+    -webkit-animation-duration: @duration;
+    animation-duration: @duration;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+.animate__backInDown() {
+    -webkit-animation-name: backInDown;
+    animation-name: backInDown
+}
+.animate__backOutUp() {
+    -webkit-animation-name: backOutUp;
+    animation-name: backOutUp
+}
+body .animate__backOutUp {
+    .animate__backOutUp() !important;
+}
+

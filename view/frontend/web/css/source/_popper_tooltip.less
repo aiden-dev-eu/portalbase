@@ -1,0 +1,24 @@
+//
+//  Tooltip (popper) variables
+//  ---------------------------------------------
+:root {
+  --popper-theme-background-color: @portal-base-color;
+  --popper-theme-text-color: @portal-secondary-color-white;
+  --popper-theme-border-radius: 5px;
+  --popper-theme-padding: 3px 10px 2px;
+}
+
+& when (@media-common = true) {
+  .popper {
+    font-size: 14px;
+  }
+  .content-tooltip {
+    --popper-theme-background-color: @portal-secondary-color-white;
+    --popper-theme-background-color-hover: @portal-secondary-color-white;
+    --popper-theme-text-color: @portal-base-color;
+    --popper-theme-border-color: @portal-base-color;
+    --popper-theme-border-width: 1px;
+    --popper-theme-border-style: solid;
+    font-size: 13px;
+  }
+}

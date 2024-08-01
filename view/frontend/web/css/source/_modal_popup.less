@@ -1,0 +1,785 @@
+
+& when (@media-common = true) {
+  .aidenportal {
+    .modal {
+        display: none
+    }
+    .modals-wrapper {
+      button {
+        &.action-primary {
+          background: @portal-action-color;
+          color: white;
+          border: 0;
+        }
+      }
+    }
+
+
+    // general modal styling
+    // TODO: deze classes verwijderen zodat het modal algemen styling word voor in de portal.
+    .modal-inner-wrap {
+
+      //scrollbar styling
+      //width
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      //Track
+      ::-webkit-scrollbar-track {
+        border: 1px solid @portal-action-color;
+        border-radius: 10px;
+      }
+
+      //Handle
+      ::-webkit-scrollbar-thumb {
+        background:  @portal-gray-400;
+        border-radius: 10px;
+      }
+
+      //Handle on hover
+      ::-webkit-scrollbar-thumb:hover {
+        background: @portal-action-color;
+      }
+
+
+      background: white;
+      width: 20%;
+      min-width: 370px;
+
+      .modal-header,
+      .modal-content,
+      .modal-footer {
+        padding-left: 4.5rem;
+        padding-right: 4.5rem;
+      }
+      .modal-content {
+        padding-right: 3.5rem;
+        margin-right: 1rem;
+      }
+
+      .action-close {
+        &:before {
+          color: @portal-secondary-color-dark;
+          font-weight: 900;
+          font-size: 10px;
+        }
+      }
+
+        // header modal
+      .modal-header {
+        padding-top: 3rem;
+        padding-bottom: 0.5rem;
+        text-align: center;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        .action-close {
+          padding: 15px;
+        }
+
+        h1, p {
+          font-weight: 600;
+          margin-bottom: 5px;
+        }
+        h1.modal-title {
+          padding-top: 90px;
+          position: relative;
+          border-bottom: none;
+          padding-bottom: 0;
+          font-size: 22px;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(~"50% - 26px");
+            height: 54px;
+            width: 54px;
+            .icon__bg-color__transform ();
+            background-repeat: no-repeat;
+          }
+
+          span.modal-subtitle {
+            display: inline-block;
+            width: 100%;
+            line-height: 140%;
+            font-size: 13px;
+            padding: 7px 30px 0;
+          }
+        }
+        p {
+          font-size: 1.4rem;
+          font-weight: 600;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+      // content modal
+      .modal-content {
+        padding-top: 3rem;
+
+        p {
+          font-size: 1.4rem;
+          font-weight: 600;
+          text-align: center;
+        }
+
+        div {
+          &.orderlists-order-wrapper {
+            select {
+              background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Laag 2' viewBox='0 0 9.41 6.12'%3E%3Cg data-name='Laag 1'%3E%3Cpath fill='%2321272a' fill-rule='evenodd' stroke='@{portal-icon-extra-dark}' d='m4 4.71.71.71.71-.71 3.29-3.29L8 .71 4.71 4 1.41.71l-.71.71 3.29 3.29Z' data-name='Path 778'/%3E%3C/g%3E%3C/svg%3E") no-repeat 100% 45% @portal-gray-200;
+              background-size: 11px;
+              background-position: ~"calc(100% - 10px)" center;
+            }
+          }
+        }
+
+        fieldset {
+          &.fieldset {
+            width: 100%;
+
+            .label {
+              margin: 0 0 2px;
+              font-size: 15px;
+            }
+
+            // all field
+            .field {
+              margin: 0 0 15px;
+
+              input[type='text'],
+              input[type='tel'],
+              input[type='email'] {
+                background-color: @portal-gray-200;
+                border: none;
+                height: 30px;
+
+                &.error {
+                  // TODO: replace collor value with variable
+                  background-color: #fdeef1;
+                }
+              }
+
+              textarea[type='textarea'] {
+                  background-color: @portal-gray-200;
+                  border: none;
+              }
+
+              .control {
+                position: relative;
+
+                button {
+                  &.clearbutton {
+                    background: transparent;
+                    border: none;
+                    font-size: 2.5rem;
+                    padding: 0 8px 0 0;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                  }
+                }
+              }
+
+              &.required {
+
+                .label {
+                  &:after {
+                    color: #333333;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                  }
+                }
+                .control {
+                  label.error {
+                    font-size: 1rem;
+                    color: @portal-danger-color;
+                  }
+                }
+
+                label {
+                  &.error {
+                    font-size: 1rem;
+                    color: @portal-danger-color;
+                  }
+                }
+              }
+
+              &.choice {
+                display: flex;
+                align-items: center;
+                .label {
+                  padding-left: 15px;
+                }
+              }
+
+              select {
+                //background-color: @portal-gray-200;
+                //background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Laag 2' viewBox='0 0 9.41 6.12'%3E%3Cg data-name='Laag 1'%3E%3Cpath fill='%2321272a' fill-rule='evenodd' stroke='@{portal-icon-extra-dark}' d='m4 4.71.71.71.71-.71 3.29-3.29L8 .71 4.71 4 1.41.71l-.71.71 3.29 3.29Z' data-name='Path 778'/%3E%3C/g%3E%3C/svg%3E") no-repeat 100% 45% #fff;
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Laag 2' viewBox='0 0 9.41 6.12'%3E%3Cg data-name='Laag 1'%3E%3Cpath fill='%2321272a' fill-rule='evenodd' stroke='@{portal-icon-extra-dark}' d='m4 4.71.71.71.71-.71 3.29-3.29L8 .71 4.71 4 1.41.71l-.71.71 3.29 3.29Z' data-name='Path 778'/%3E%3C/g%3E%3C/svg%3E") no-repeat 100% 45% @portal-gray-200;
+                background-size: 11px;
+                background-position: ~"calc(100% - 10px)" center;
+                border: none;
+                &:focus {
+                  border: none;
+                }
+
+                &.error {
+                  // TODO: replace collor value with variable
+                  background-color: #fdeef1;
+                }
+              }
+            }
+          }
+        }
+
+        tbody td.tablecol--action {
+          ul.inlinelist {
+            justify-content: flex-end;
+          }
+        }
+
+        select.select-item-required {
+          background-color: #fdcbd2;
+        }
+
+        p.item-required {
+          color: @portal-danger-color;
+          text-align: left;
+          font-size: 1.2rem;
+          margin-top: 0.2rem;
+          margin-bottom: 0;
+        }
+      }
+
+      // footer section
+      .modal-footer {
+        padding-top: 4.5rem;
+        padding-bottom: 6rem;
+        justify-content: center;
+        // if .modal footer has mare than 1 and less than 3 direct childeren this is the exception
+        &:has(> :nth-child(1)):has(> :nth-child(+2):last-child) {
+          justify-content: space-between;
+        }
+
+        button {
+          min-width: calc(~"50% - 7.5px");
+          padding: 8px 15px;
+
+          &.action-secondary {
+            &.action-dismiss {
+              border-color: @portal-action-color;
+              span {
+                color: @portal-action-color;
+              }
+            }
+          }
+
+          &.action-primary {
+            &.action-accept {
+              span {
+                color: @portal-secondary-color-white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // TODO: This code is for modal popup in orderlist only? if so it should be placed inside the orderlist module?
+    .add-product-to-orderlist-modal {
+      .modal-inner-wrap {
+        .modal-footer {
+          padding-bottom: 3rem;
+          &:has(> :nth-child(1)):has(> :nth-child(+2):last-child) {
+            justify-content: center;
+            box-shadow: 0px -35px 16px -30px white;
+            z-index: 2;
+          }
+
+          button {
+            min-width: 150px;
+
+            &:first-of-type {
+              margin-right: 2rem;
+            }
+          }
+        }
+        .modal-content {
+
+          table {
+            td.tablecol--product-description {
+              span {
+                white-space: break-spaces;
+              }
+            }
+          }
+
+          .itemlist-item {
+            position: relative;
+            .col--footer {
+              position: absolute;
+              margin: 0;
+              right: 20px;
+              background: transparent;
+              top: 15px;
+              z-index: 10;
+
+              .flextable--actions {
+                .flextable-head {
+                  flex-basis: 100%;
+                }
+                .flextable-cell {
+                  flex-basis: unset;
+                  ul {
+                    li {
+                      margin: 0;
+                    }
+                  }
+                }
+              }
+            }
+            .col--details {
+              .flextable-head {
+                flex-basis: 100%;
+                padding: 0.5em 1.5em 0 0;
+              }
+              .flextable-cell {
+                flex-basis: 100%;
+                padding-top: 0;
+                padding-bottom: 0.5em;
+              }
+            }
+
+            .itemlist-item-col.col--img {
+              position: relative;
+              margin-left: 0;
+              margin-top: 0.5rem;
+              background-position: bottom right;
+              .shadow-placeholder {
+                position: absolute;
+                width: 100%;
+                height: 50%;
+                bottom: 0;
+                box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.3);
+              }
+            }
+            &:not(:first-child) {
+              border-top: solid white 10px;
+            }
+          }
+          div.orderlists-order-wrapper .orderlist-mobile select,
+          div.orderlists-order-wrapper select {
+            transition: all 0.3s ease-in-out;
+            &.select-item-required {
+              background-color: #fff4f6;
+              border: 1px solid @portal-danger-color;
+            }
+          }
+          div.orderlists-order-wrapper .orderlist-mobile select {
+            background-color: white;
+          }
+          .ico_gray_add_in_circle {
+            background-size: 100%;
+          }
+
+          a.ico-add {
+              transform: rotate(0deg);
+              transition: all 0.5s ease-in-out;
+              border: 1px solid transparent;
+              height: 1.6em;
+              width: 1.6em;
+            &:hover, &:active {
+              transform: rotate(90deg);
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20.66' height='20.66' data-name='Group 780'%3E%3Cg data-name='Group 750'%3E%3Cg fill='@{portal-icon-action}' data-name='Path 713'%3E%3Cpath d='M10.33 0A10.33 10.33 0 1 1 0 10.33 10.33 10.33 0 0 1 10.33 0Z'/%3E%3Cpath fill='@{portal-icon-action}' d='M10.33 1.5a8.84 8.84 0 0 0 0 17.66 8.84 8.84 0 0 0 0-17.66m0-1.5a10.33 10.33 0 1 1 0 20.66 10.33 10.33 0 0 1 0-20.66Z'/%3E%3C/g%3E%3Cpath fill='white' stroke='white' stroke-width='1.5' d='M10.27 5.47v9.17' data-name='Path 247'/%3E%3Cpath fill='%23bed62f' stroke='white' stroke-width='1.5' d='M5.69 10.06h9.17' data-name='Path 246'/%3E%3C/g%3E%3C/svg%3E");
+              background-size: 100%;
+            }
+          }
+
+          .ico-green-circle-check-white {
+            border: 1px solid transparent;
+            height: 1.6em;
+            width: 1.6em;
+          }
+        }
+      }
+    }
+
+    .add-product-to-orderlist-modal {
+      table.table tr {
+        &:first-child td.tablecol--image .table-image {
+          &:hover {
+            box-shadow: 20px 5px 25px -2px @portal-gray-400;
+          }
+        }
+
+        &:only-child {
+          td.tablecol--image .table-image {
+            transform-origin: left bottom;
+            &:hover {
+              box-shadow: 20px 0 15px -7px @portal-gray-400;
+            }
+          }
+        }
+      }
+    }
+
+
+
+    //
+    // MODAL SPECIFIC ICONS in header of modal, .modal-header
+    //
+
+    // SPECIFIC ICONS: EDIT ICON: when the modal is for contact page, for create contact or edit contact/productgroup
+    aside.editcontact,
+    aside.createcontact,
+    aside.editproductgroup {
+      .modal-inner-wrap .modal-header h1.modal-title:before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Laag 2' viewBox='0 0 54 54'%3E %3Cg data-name='Laag 1'%3E %3Cg data-name='Group 721'%3E %3Cpath fill='@{portal-icon-action}' d='M0 27a27 27 0 1 1 54 0 27 27 0 0 1-54 0ZM27 4.5a22.5 22.5 0 1 0 0 45 22.5 22.5 0 0 0 0-45Z' data-name='Path 334'/%3E %3C/g%3E %3C/g%3E %3Cpath fill='@{portal-icon-basic}' d='m33.21 16.95-2.41 2.41 4 4 2.41-2.41-4-4Zm-3.92 3.92L18.21 31.95v4h4l11.08-11.08-4-4Z' data-name='Laag 2'/%3E %3C/svg%3E");
+      }
+    }
+
+    // SPECIFIC ICONS: SUCCESS ICON: when the modal is for success popup inside returnrequests
+    &.portalreturnrequests-returnrequests-main,
+    aside.createcontact.feedbackmodal_success,
+    aside.editcontact.feedbackmodal_success,
+    aside.feedbackmodal_success,
+    aside.deleteorderlist.feedbackmodal_success,
+    aside.deletecontact.feedbackmodal_success {
+      .modal-inner-wrap .modal-header h1.modal-title:before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Laag 2' viewBox='0 0 54 54'%3E %3Cg data-name='Laag 1'%3E %3Cg data-name='Group 719'%3E %3Cpath fill='@{portal-icon-action}' d='M0 27a27 27 0 1 1 54 0 27 27 0 0 1-54 0ZM27 4.5a22.5 22.5 0 1 0 0 45 22.5 22.5 0 0 0 0-45Z' data-name='Path 334'/%3E %3Cpath fill='none' stroke='@{portal-icon-action}' stroke-linecap='round' stroke-width='4' d='m18 28.5 6.03 10.79' data-name='Line 188'/%3E %3Cpath fill='none' stroke='@{portal-icon-action}' stroke-linecap='round' stroke-width='4' d='M36.06 18.01 25.01 39.54' data-name='Line 189'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E");
+      }
+    }
+    // SPECIFIC ICONS: DELETE ICON: in circle
+    aside.deletecontact,
+    aside.deleteorderlist,
+    aside.deleteproductgroup
+    {
+      .modal-inner-wrap .modal-header h1.modal-title:before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Laag 2' viewBox='0 0 54 54'%3E %3Cg data-name='b'%3E %3Cg data-name='c'%3E %3Cg data-name='d'%3E %3Cpath fill='@{portal-icon-action}' d='M0 27a27 27 0 1 1 54 0 27 27 0 0 1-54 0ZM27 4.5a22.5 22.5 0 1 0 0 45 22.5 22.5 0 0 0 0-45Z' data-name='e'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3Cpath fill='@{portal-icon-basic}' d='M19.16 16.64v2.1h15.68v-2.1H29.1v-.83h-4.91v.86m-4.34 4.25h14.31v12.9s-.45 2.13-2.1 2.13H21.29s-1.41-.48-1.44-2.18 0-12.84 0-12.84Z' data-name='Laag 3'/%3E %3C/svg%3E");
+      }
+    }
+
+    // SPECIFIC ICONS: ADD ICON: PLUS ICON in circle
+    aside.createorderlist,
+    aside.createproductgroup {
+      .modal-inner-wrap .modal-header h1.modal-title:before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Laag 2' viewBox='0 0 14.63 14.63'%3E%3Cg data-name='Group 762'%3E%3Ccircle cx='7.32' cy='7.32' r='6.69' fill='none' stroke='@{portal-icon-action}' stroke-width='1.25' data-name='Ellipse 11'/%3E%3Cpath fill='%23697077' stroke='@{portal-icon-action}' d='M7.32 3.81v6.65' data-name='Path 247'/%3E%3Cpath fill='%23697077' stroke='@{portal-icon-action}' d='M3.99 7.13h6.65' data-name='Path 246'/%3E%3C/g%3E%3C/svg%3E");
+      }
+    }
+
+    // SPECIFIC ICONS: SEARCH ICON: search icon in circle
+    aside.add-product-to-orderlist-modal {
+      .modal-inner-wrap .modal-header h1.modal-title:before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-name='Laag 2' viewBox='0 0 54 54'%3E%3Cg data-name='Laag 1'%3E%3Cg data-name='Group 745'%3E%3Cpath fill='@{portal-icon-action}' d='M0 27a27 27 0 1 1 54 0 27 27 0 0 1-54 0ZM27 4.5a22.5 22.5 0 1 0 0 45 22.5 22.5 0 0 0 0-45Z' data-name='Path 800'/%3E%3C/g%3E%3Cpath fill='none' stroke='@{portal-icon-action}' stroke-linecap='round' stroke-width='3' d='m36.11 36.11-4.3-4.31m2.38-5.76a8.15 8.15 0 1 1-16.32 0 8.15 8.15 0 0 1 16.33 0Z' data-name='Path 714'/%3E%3C/g%3E%3C/svg%3E");
+      }
+    }
+    // SPECIFIC ICONS: RORDER ICON: reorder icon
+    aside.confirm-reorder {
+      .modal-inner-wrap .modal-header h1.modal-title:before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='b' width='47' height='47' data-name='Laag 2' preserveAspectRatio='xMidYMid' style='margin:initial;display:block;shape-rendering:auto;background:0 0' viewBox='0 0 103.63 143.72'%3E%3Cg class='ldl-scale' style='transform-origin:50%25 50%25;transform:rotate(0deg) scale(.8,.8)'%3E%3Cg class='ldl-ani' style='transform-box:view-box;opacity:1;transform-origin:51.81px 71.86px;transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);animation:1.96078s linear 0s infinite normal forwards running animate'%3E%3Cg class='ldl-layer'%3E%3Cg class='ldl-ani'%3E%3Cg id='c' data-name='Laag 1'%3E%3Cg class='ldl-layer'%3E%3Cpath fill='none' stroke='@{portal-icon-action}' stroke-miterlimit='10' stroke-width='8' d='M8.81 92.69A47.682 47.682 0 0 1 4 71.75c0-26.41 21.41-47.82 47.82-47.82a47.59 47.59 0 0 1 27.62 8.78' class='ldl-ani' style='stroke-width:11.44'/%3E%3C/g%3E%3Cg class='ldl-layer'%3E%3Cpath fill='none' stroke='@{portal-icon-action}' stroke-miterlimit='10' stroke-width='8' d='M96.42 54.5a47.772 47.772 0 0 1 3.21 17.26c0 26.41-21.41 47.82-47.82 47.82a47.58 47.58 0 0 1-27-8.35' class='ldl-ani' style='stroke-width:11.44'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg class='ldl-layer'%3E%3Cg class='ldl-ani'%3E%3Cg id='d' data-name='Laag 2'%3E%3Cg class='ldl-layer'%3E%3Cpath fill='none' stroke='@{portal-icon-action}' stroke-miterlimit='10' stroke-width='8' d='m67.39 1.49 12.63 31.47L48.86 46.4' class='ldl-ani' style='stroke-width:11.44'/%3E%3C/g%3E%3Cg class='ldl-layer'%3E%3Cpath fill='none' stroke='@{portal-icon-action}' stroke-miterlimit='10' stroke-width='8' d='m37.31 142.17-13.13-31.25 30.94-13.95' class='ldl-ani' style='stroke-width:11.44'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cstyle%3E@keyframes animate%7B0%25%7Btransform:translate(0,0) rotate(0deg) scale(1,1) skew(0deg,0deg);opacity:1%7D4%25%7Btransform:translate(0,0) rotate(14.4deg)%7D6%25%7Btransform:translate(0,0) rotate(21.6deg)%7D8%25%7Btransform:translate(0,0) rotate(28.8deg)%7D12%25%7Btransform:translate(0,0) rotate(43.2deg)%7D14%25%7Btransform:translate(0,0) rotate(50.4deg)%7D16%25%7Btransform:translate(0,0) rotate(57.6deg)%7D22%25%7Btransform:translate(0,0) rotate(79.2deg)%7D24%25%7Btransform:translate(0,0) rotate(86.4deg)%7D26%25%7Btransform:translate(0,0) rotate(93.6deg)%7D28%25%7Btransform:translate(0,0) rotate(100.8deg)%7D32%25%7Btransform:translate(0,0) rotate(115.2deg)%7D34%25%7Btransform:translate(0,0) rotate(122.4deg)%7D36%25%7Btransform:translate(0,0) rotate(129.6deg)%7D38%25%7Btransform:translate(0,0) rotate(136.8deg)%7D40%25%7Btransform:translate(0,0) rotate(144deg)%7D44%25%7Btransform:translate(0,0) rotate(158.4deg)%7D46%25%7Btransform:translate(0,0) rotate(165.6deg)%7D48%25%7Btransform:translate(0,0) rotate(172.8deg)%7D52%25%7Btransform:translate(0,0) rotate(187.2deg)%7D54%25%7Btransform:translate(0,0) rotate(194.4deg)%7D56%25%7Btransform:translate(0,0) rotate(201.6deg)%7D58%25%7Btransform:translate(0,0) rotate(208.8deg)%7D62%25%7Btransform:translate(0,0) rotate(223.2deg)%7D64%25%7Btransform:translate(0,0) rotate(230.4deg)%7D66%25%7Btransform:translate(0,0) rotate(237.6deg)%7D68%25%7Btransform:translate(0,0) rotate(244.8deg)%7D70%25%7Btransform:translate(0,0) rotate(252deg)%7D74%25%7Btransform:translate(0,0) rotate(266.4deg)%7D76%25%7Btransform:translate(0,0) rotate(273.6deg)%7D78%25%7Btransform:translate(0,0) rotate(280.8deg)%7D82%25%7Btransform:translate(0,0) rotate(295.2deg)%7D84%25%7Btransform:translate(0,0) rotate(302.4deg)%7D86%25%7Btransform:translate(0,0) rotate(309.6deg)%7D88%25%7Btransform:translate(0,0) rotate(316.8deg)%7D90%25%7Btransform:translate(0,0) rotate(324deg)%7D94%25%7Btransform:translate(0,0) rotate(338.4deg)%7D96%25%7Btransform:translate(0,0) rotate(345.6deg)%7Dto%7Btransform:translate(0,0) rotate(360deg)%7D%7D%3C/style%3E%3C/svg%3E");
+        background-size: contain;
+        width: 74px;
+        height: 74px;
+      }
+    }
+  }
+}
+
+// mixin declaration: shared styling for small device width en small device height
+.mixin-modal-small_width-small_height {
+  .modal-inner-wrap {
+
+    .modal-header {
+      padding-top: 3rem;
+
+      h1.modal-title {
+        padding-top: 70px;
+        &:before {
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+
+    .modal-content {
+      padding-top: 1rem;
+    }
+
+    .modal-footer {
+      padding-top: 1.5rem;
+      padding-bottom: 3rem;
+    }
+  }
+}
+
+//
+//  Tablet
+//  _____________________________________________
+
+
+& when (@media-target = 'desktop'), (@media-target = 'all') {
+
+  // Min-width  768px and max-width 1024px
+  @media only screen and (min-width: @screen__m) and (max-width: @screen__l) {
+    .aidenportal {
+      .modal-inner-wrap {
+        //scrollbar styling
+        //Handle
+        ::-webkit-scrollbar-thumb {
+          background: @portal-action-color;
+        }
+
+        //Handle on hover
+        ::-webkit-scrollbar-thumb:hover,
+        ::-webkit-scrollbar-thumb:active,
+        ::-webkit-scrollbar-thumb:focus
+        {
+          background: @portal-gray-400;
+        }
+      }
+    }
+  }
+
+  // Min-width  768px and max-width 1440px
+  @media only screen and (min-width: @screen__m) and (max-width: @screen__xl) {
+    .aidenportal {
+      .modal-popup.add-product-to-orderlist-modal {
+        .modal-inner-wrap {
+          .modal-content {
+            .itemlist-item {
+              .itemlist-item-col {
+                .flextable-head,
+                .flextable-cell {
+                  &[data-key="product_group"] {
+                    flex-basis: 100%;
+                  }
+                }
+
+                .flextable-head[data-key="product_group"] {
+                  padding-bottom: 0.25rem
+                }
+
+                .flextable-cell[data-key="product_group"] {
+                  padding-top: 0;
+                  padding-bottom: 1.3rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// mobile max width 768px
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  // mobile-only stuff goes here
+  .aidenportal {
+    .modal-inner-wrap {
+      .modal-header {
+        h1.modal-title {
+          // TODO: @chantal controleren of dit de gewenste font-size is voor de titel van de modal
+          font-size: 2.2rem;
+        }
+      }
+    }
+  }
+  html {
+    .aidenportal {
+      .modal-inner-wrap {
+
+        //scrollbar styling
+        //Handle
+        ::-webkit-scrollbar-thumb {
+          background: @portal-action-color;
+        }
+
+        //Handle on hover
+        ::-webkit-scrollbar-thumb:hover,
+        ::-webkit-scrollbar-thumb:active,
+        ::-webkit-scrollbar-thumb:focus
+        {
+          background: @portal-gray-400;
+        }
+
+        .modal-content {
+          .itemlist-item {
+            .col--footer {
+
+              .flextable.flextable--actions {
+                border-bottom: unset;
+              }
+            }
+          }
+        }
+
+        .modal-footer {
+            flex-direction: column;
+            align-items: center;
+
+          &:has(> :nth-child(2)){
+            flex-direction: row;
+          }
+
+          button {
+            max-width: calc(~"50% - 7.5px");
+          }
+        }
+      }
+
+      // TODO: This code is for modal popup in orderlist only? if so it should be placed inside the orderlist module?
+      .modal-popup.add-product-to-orderlist-modal {
+        .modal-inner-wrap {
+          max-height: calc(~"100% - 6rem");
+          width: 90%;
+          margin: 3rem auto;
+          .modal-footer {
+            &:has(> :nth-child(2)){
+              flex-direction: row;
+              align-items: center;
+              column-gap: 10px;
+            }
+
+            button:first-of-type {
+              margin-right: 0;
+            }
+          }
+          .modal-content {
+            .itemlist-item {
+              padding: 1rem 2rem;
+              .flextable-cell {
+                select {
+                  max-width: unset;
+                }
+              }
+              .col--details {
+                .flextable-head {
+                  padding-bottom: 0.25rem;
+                }
+              }
+            }
+          }
+          .modal-header {
+            h1.modal-title {
+              padding-top: 75px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// MOBILE custom
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+
+  // mobile max-width 480px
+  @media only screen and (max-width: @screen__xs) {
+
+    html {
+      .aidenportal {
+
+        // mixin initialize
+        .mixin-modal-small_width-small_height();
+
+        .modal-inner-wrap {
+          min-width: 310px;
+
+          //scrollbar styling
+          //width
+          ::-webkit-scrollbar {
+            width: 7px;
+          }
+
+          .modal-header,
+          .modal-content,
+          .modal-footer {
+            padding-left: 3rem;
+            padding-right: 3rem;
+          }
+          .modal-content {
+            padding-right: 2rem;
+            margin-right: 1rem;
+          }
+        }
+        .modal-popup.add-product-to-orderlist-modal {
+          .modal-inner-wrap {
+            .modal-header {
+              h1.modal-title {
+                padding-top: 60px !important;
+                span.modal-subtitle {
+                  padding: 0;
+                }
+              }
+            }
+            .modal-footer {
+              padding-bottom: 1.5rem;
+
+              button {
+                min-width: 100px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // mobile max-HEIGHT: 640px
+  // styles for custom breakpoint height below 640px mobile screen (when device is tilled in landscape orientation)
+  @media only screen and (max-height: @screen__s) {
+    .aidenportal {
+
+      .modal-popup {
+        //scrollbar styling
+        //width
+        ::-webkit-scrollbar {
+          width: 14px;
+          background-color: transparent;
+        }
+
+        //Track
+        ::-webkit-scrollbar-track {
+          background: linear-gradient(to right, @portal-action-color 5%, transparent 5%, transparent 45%, @portal-action-color 45%, @portal-action-color 50%, transparent 50%);;
+        }
+
+        //Handle
+        ::-webkit-scrollbar-thumb {
+
+          //background: @portal-action-color;
+          background: linear-gradient(to right, @portal-action-color 50%,  transparent 50%);
+        }
+
+        //Handle on hover
+        ::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(to right, @portal-gray-400 50%,  transparent 50%);
+        }
+      }
+
+      // mixin initialize
+      .mixin-modal-small_width-small_height();
+
+      .modal-inner-wrap {
+        overflow: auto;
+
+        .modal-header {
+          padding-right: 2rem;
+        }
+        .modal-footer {
+          padding-right: 3.5rem;
+        }
+
+        .modal-content {
+          overflow: visible;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

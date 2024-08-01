@@ -1,0 +1,47 @@
+"Address with addresscode: ""%1"" does not exist for customerId: ""%2"".","Address with addresscode: ""%1"" does not exist for customerId: ""%2""."
+Everyone,Everyone
+"No one","No one"
+ad_pb_zero_qty,"Quantity for item "%1" is zero"
+Info,Info
+Warn,Warn
+Error,Error
+Ascending,Ascending
+Descending,Descending
+"An error occurred calling ""%1"" SboWebConnector endpoint: %2. Function downloadDocument.","An error occurred calling ""%1"" SboWebConnector endpoint: %2. Function downloadDocument."
+"An error occurred calling ""%1"" SboWebConnector endpoint: %2. Function checkAndUpgradePortal.","An error occurred calling ""%1"" SboWebConnector endpoint: %2. Function checkAndUpgradePortal."
+"An error occurred calling SboWebConnector endpoint ""%1"", see logs for more detail.","An error occurred calling SboWebConnector endpoint ""%1"", see logs for more detail."
+"Message from SboWebConnector endpoint ""%1"": %2","Message from SboWebConnector endpoint ""%1"": %2"
+"An error occurred calling ""%1"" SboWebConnector endpoint: %2. Function dataRetrieve.","An error occurred calling ""%1"" SboWebConnector endpoint: %2. Function dataRetrieve."
+"Unable to retrieve tier prices for product with sku ' . . ', priceInfo empty.","Unable to retrieve tier prices for product with sku ' . . ', priceInfo empty."
+"Unable to retrieve tier prices for product with sku ' . . ', pricesByQuantity nonexistent","Unable to retrieve tier prices for product with sku ' . . ', pricesByQuantity nonexistent"
+"The product with itemcode ""%1"" doesn't exist.","The product with itemcode ""%1"" doesn't exist."
+"The product with id ""%1"" doesn't exist.","The product with id ""%1"" doesn't exist."
+"""No products found for store with id: "" .","""No products found for store with id: "" ."
+"Aiden Portal","Aiden Portal"
+Base,Base
+Debug,Debug
+"Logging level","Logging level"
+"Use sample data","Use sample data"
+"Enable dummy customer","Enable dummy customer"
+"Dummy Customer CardCode","Dummy Customer CardCode"
+"Dummy Customer Id","Dummy Customer Id"
+"Dummy Customer ContactCode","Dummy Customer ContactCode"
+"Dummy Customer Authorization Id","Dummy Customer Authorization Id"
+"Api task code","Api task code"
+"Authorization Profiles","Authorization Profiles"
+"Account Display","Account Display"
+"Show recent orders","Show recent orders"
+"Export Settings","Export Settings"
+CSV,CSV
+Delimiter,Delimiter
+Enclosure,Enclosure
+Excel,Excel
+"Sheet Name","Sheet Name"
+"Tier Pricing","Tier Pricing"
+"Enable Tier Prices","Enable Tier Prices"
+"Expand Tier Pricing","Expand Tier Pricing"
+"Back to webshop","Back to webshop"
+"My account","My account"
+"My Wish List", "My Wishlist"
+ad_pb_pdf_download, "Download as PDF"
+ad_pb_duplicate, "Make a copy"

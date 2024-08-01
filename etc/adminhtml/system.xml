@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="aiden_portal" translate="label" sortOrder="2000">
+            <label>Aiden Portal</label>
+        </tab>
+        <section id="portalbase_section" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Base</label>
+            <tab>aiden_portal</tab>
+            <resource>Aiden_PortalBase::config</resource>
+            <group id="authorization" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Authorizations</label>
+                <field id="order" translate="label comment" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Place Order</label>
+                    <comment>Authorization profiles allowed to place an order, others will land as a quote.</comment>
+                    <source_model>Aiden\PortalBase\Model\Config\Authorization</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+            <group id="debug" translate="label" type="text" sortOrder="3" showInDefault="2" showInWebsite="1" showInStore="1">
+                <label>Debug</label>
+                <field id="logging" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logging level</label>
+                    <source_model>Aiden\PortalBase\Model\Config\LoggingLevel</source_model>
+                </field>
+                <field id="sample_data" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use sample data</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="dummy_customer_enable" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable dummy customer</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="dummy_customer_cardcode" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dummy Customer CardCode</label>
+                </field>
+                <field id="dummy_customer_id" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dummy Customer Id</label>
+                </field>
+                <field id="dummy_customer_contactcode" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dummy Customer ContactCode</label>
+                </field>
+                <field id="dummy_customer_auth_id" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dummy Customer Authorization Id</label>
+                </field>
+                <field id="dummy_customer_auth_edit" translate="label comment" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Can Edit Authorization Id</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="api_task_codes" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Api task code</label>
+                <field id="authorization" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Authorization Profiles</label>
+                </field>
+            </group>
+            <group id="account_display" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Account Display</label>
+                <field id="show_recentorders" translate="label comment" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Show recent orders</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="export_settings" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Export Settings</label>
+                <group id="csv" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>CSV</label>
+                    <field id="delimiter" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Delimiter</label>
+                    </field>
+                    <field id="enclosure" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enclosure</label>
+                    </field>
+                </group>
+                <group id="excel" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Excel</label>
+                    <field id="sheet_name" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Sheet Name</label>
+                    </field>
+                </group>
+            </group>
+            <group id="tier_pricing" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Tier Pricing</label>
+                <field id="enable" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Tier Prices</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="expand_tier_pricing" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Expand Tier Pricing</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

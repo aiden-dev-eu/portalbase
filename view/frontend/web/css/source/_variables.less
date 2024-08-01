@@ -1,0 +1,66 @@
+//
+// 	Portal3-unique variables
+//  ---------------------------------------------
+@portal-gray-200: #F4F5F6;
+@portal-gray-300: #eef0f2;
+@portal-gray-400: #c0c5c9;
+@portal-gray-800: #878D96;
+@portal-gray-900: #727272;
+@portal-text-color: #32363D;
+@portal-action-color: #bfd730; //Aiden Limelight Green
+@portal-attention-color: #FFA700;
+@portal-danger-color: #D76B5E;
+@portal-status-type-1: #BED62F;
+@portal-status-type-0: #fe503b;
+
+// icon color variable
+@portal-icon-danger: replace("@{portal-danger-color}", "#", "%23");
+@portal-icon-basic: replace("@{portal-gray-800}", "#", "%23");
+@portal-icon-grey-light: replace("@{portal-gray-400}", "#", "%23");
+@portal-icon-action: replace("@{portal-action-color}", "#", "%23");
+@portal-icon-dark: replace("@{portal-secondary-color-dark}", "#", "%23");
+@portal-icon-extra-dark: replace("@{portal-body-color}", "#", "%23");
+@portal-icon-attention-color: replace("@{portal-attention-color}", "#", "%23");
+
+//
+// 	Aiden theme variables
+//  ---------------------------------------------
+
+@portal-base-color: #3b5279; //Aiden Royal Blue
+@portal-accent-color: #D3DAE1; //Aiden Cool Grey
+@portal-secondary-color-white: #F5F6F2; //Aiden Off White
+@portal-secondary-color-dark: #32363D; //Aiden Warm Black
+@portal-warning-color: #D61F26; //Aiden Blaze Red
+@portal-border-color: #c5c5c5; // light-grey
+@portal-link-color: #dce98f; // Link Soft Green
+@portal-body-color: #21272A; // basic Black color
+@portal-background-grey: #f7f7f7; //checkout
+@portal-border-grey: #cccccc82; //checkout
+@portal-list-items: #929497; //list items
+
+// mouse-icon color in slider carousel
+@mouse-icon-color: replace("@{portal-link-color}", "#", "%23");
+@mouse-icon-color-hover: replace("@{portal-action-color}", "#", "%23");
+@icon-color-basic: replace("@{portal-secondary-color-white}", "#", "%23");
+
+//
+//  Other variables
+//  ---------------------------------------------
+// set logo height in header
+@portal-logo-height-desktop: 52px;
+
+//
+//  Color Codes luma variables override
+//  ---------------------------------------------
+
+// Primary color blue Luma
+@color-blue1: @portal-base-color;
+
+// Button Luma
+@button-primary__background: @portal-action-color;
+@button-primary__border: 1px solid  @portal-action-color;
+
+// Link Luma
+@link__color:  @portal-action-color;
+@link__hover__color:  @portal-action-color;
+@focus__color: @portal-action-color;

@@ -1,0 +1,24 @@
+{
+    "name": "aiden/module-portalbase",
+    "description": "Module that contains the base functionality for a portal to SAP in the account menu of Magento",
+    "type": "magento2-module",
+    "version": "3.10",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "tjanssen",
+            "email": "thomas.janssen@aiden.eu"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Aiden\\PortalBase\\": ""
+        }
+    }
+}

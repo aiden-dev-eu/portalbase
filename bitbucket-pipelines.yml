@@ -1,0 +1,7 @@
+pipelines:
+  tags:
+    '*':
+      import: aiden-pipelines:master:build-pipeline
+  branches:
+    'develop':
+      import: aiden-pipelines:master:deploy-pipeline

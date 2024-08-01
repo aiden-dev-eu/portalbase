@@ -1,0 +1,61 @@
+& when (@media-common = true) {
+  .aidenportal {
+    .table-wrapper {
+      // table view
+      table.table {
+        thead {
+          tr {
+            th {
+              &.tablecol--line_total_exc_vat,
+              &.tablecol--price_before_discount,
+              &.tablecol--open_qty,
+              &.tablecol--delivered_qty,
+              &.tablecol--quantity,
+              &.tablecol--date,
+              &.tablecol--delivery_date,
+              &.tablecol--amount-vat--inc,
+              &.tablecol--amount-vat--exc,
+              &.tablecol--your_reference,
+              &.tablecol--expiring_days,
+              &.tablecol--due_date,
+              &.tablecol--phone,
+              &.tablecol--total_exc_vat,
+              &.tablecol--vat_amount {
+                text-align: right;
+              }
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            td {
+              &.tablecol--delivery_adress {
+                max-width: 100px;
+              }
+
+              &.tablecol--date,
+              &.tablecol--delivery_date,
+              &.tablecol--action,
+              &.tablecol--quantity,
+              &.tablecol--delivered_qty,
+              &.tablecol--open_qty,
+              &.tablecol--price_before_discount,
+              &.tablecol--line_total_exc_vat,
+              &.tablecol--amount-vat--inc,
+              &.tablecol--amount-vat--exc,
+              &.tablecol--your_reference,
+              &.tablecol--expiring_days,
+              &.tablecol--due_date,
+              &.tablecol--phone,
+              &.tablecol--total_exc_vat,
+              &.tablecol--vat_amount {
+                text-align: right;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

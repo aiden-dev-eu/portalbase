@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <portalbase_section>
+            <authorization>
+                <order>-1</order>
+            </authorization>
+            <debug>
+                <logging>2</logging>
+                <sample_data>0</sample_data>
+                <dummy_customer_enable>0</dummy_customer_enable>
+                <dummy_customer_auth_edit>0</dummy_customer_auth_edit>
+            </debug>
+            <api_task_codes>
+                <authorization>portalbase.authorization</authorization>
+            </api_task_codes>
+            <account_display>
+                <show_recentorders>0</show_recentorders>
+            </account_display>
+            <export_settings>
+                <csv>
+                    <delimiter>,</delimiter>
+                    <enclosure>"</enclosure>
+                </csv>
+                <excel>
+                    <sheet_name>Sheet 1</sheet_name>
+                </excel>
+            </export_settings>
+            <tier_pricing>
+                <enable>0</enable>
+            </tier_pricing>
+        </portalbase_section>
+    </default>
+</config>
