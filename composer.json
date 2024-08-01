@@ -2,7 +2,7 @@
     "name": "aiden/module-portalbase",
     "description": "Module that contains the base functionality for a portal to SAP in the account menu of Magento",
     "type": "magento2-module",
-    "version": "3.10",
+    "version": "3.10.0",
     "license": "proprietary",
     "authors": [
         {
